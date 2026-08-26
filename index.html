@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choir in a Pub - Two Pot Screamers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .flyer {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            color: #2c3e50;
+            padding: 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 35px 30px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+        }
+
+        .header-title {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .header-subtitle {
+            font-size: 18px;
+            color: #f39c12;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .body-content {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .tagline {
+            color: #34495e;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            border-left: 3px solid #f39c12;
+            padding-left: 12px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #1e3a5f;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            margin-top: 12px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .benefits-list li {
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .benefits-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            margin: 12px 0;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .option-box {
+            border: 1px solid #d5dce0;
+            padding: 11px;
+            background: white;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .option-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #f39c12;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .option-price {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+        }
+
+        .option-desc {
+            font-size: 10.5px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .proof-point {
+            background: #f8f9fa;
+            border-left: 3px solid #4caf50;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .proof-point strong {
+            color: #1e3a5f;
+        }
+
+        .footer-divider {
+            height: 2px;
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+            margin-top: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 20px;
+        }
+
+        .footer-section p {
+            font-size: 12px;
+            color: #2c3e50;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+
+        .footer-cta {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+        }
+
+        .contact-info {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 3px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 4px 10px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 5px;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            opacity: 0.9;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .flyer {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .flyer {
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .header-title {
+                font-size: 32px;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                grid-template-columns: 1fr;
+            }
+
+            .body-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">Choir in a Pub</div>
+            <div class="header-subtitle">Two Pot Screamers</div>
+        </div>
+
+        <!-- Body -->
+        <div class="body-content">
+            <!-- Main Tagline -->
+            <div class="tagline">
+                Turn a quiet weeknight into a room full of people singing, laughing, eating and drinking.
+            </div>
+
+            <!-- Problem/Opportunity -->
+            <p style="font-size: 12px; color: #555; margin-bottom: 10px; line-height: 1.5;">
+                Pubs need reasons for people to come in on a Tuesday or Wednesday night. People are looking for connection, community and experiences they can share. <strong style="color: #1e3a5f;">We bring both together.</strong>
+            </p>
+
+            <!-- Proof Point -->
+            <div class="proof-point">
+                <strong>Proven track record:</strong> We run a monthly choir night at the Celtic Club in Brunswick. One hour of high-energy, participatory singing that turns a regular weeknight into a genuine community event.
+            </div>
+
+            <!-- What It Brings -->
+            <div class="section-title">What It Brings to Your Venue</div>
+            <ul class="benefits-list">
+                <li><strong>Mid-week foot traffic</strong> — a reliable reason to come out on a quiet night</li>
+                <li><strong>An engaged crowd</strong> — positive, social people who eat, drink and enjoy</li>
+                <li><strong>Repeat visitation</strong> — a monthly event can become part of people's routine</li>
+                <li><strong>Community connection</strong> — an experience that builds goodwill</li>
+                <li><strong>Low-overhead entertainment</strong> — we bring the experience; you provide the venue</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <!-- Three Options -->
+            <div class="section-title">Three Ways to Work Together</div>
+            <div class="options-grid">
+                <div class="option-box">
+                    <div class="option-label">Option A</div>
+                    <div class="option-label" style="color: #1e3a5f; text-transform: none; font-weight: 600;">Simple & Guaranteed</div>
+                    <div class="option-price">$1,000/event</div>
+                    <div class="option-desc">One-hour choir. You handle the rest. You keep all food & beverage revenue. Simple, predictable, turnkey.</div>
+                </div>
+                <div class="option-box">
+                    <div class="option-label">Option B</div>
+                    <div class="option-label" style="color: #1e3a5f; text-transform: none; font-weight: 600;">Shared Risk</div>
+                    <div class="option-price">No fee</div>
+                    <div class="option-desc">Co-promote & ticket together. You keep 100% food & beverage. We keep ticket revenue. Both benefit from bigger crowds.</div>
+                </div>
+                <div class="option-box">
+                    <div class="option-label">Option C</div>
+                    <div class="option-label" style="color: #1e3a5f; text-transform: none; font-weight: 600;">Partnership</div>
+                    <div class="option-price">$500 + promotion</div>
+                    <div class="option-desc">Smaller base fee. We build the event together. Develop attendance incentives. Grow over time.</div>
+                </div>
+            </div>
+
+            <!-- Footer Divider -->
+            <div class="footer-divider"></div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <div class="footer-section">
+                    <p style="font-weight: 600; color: #1e3a5f; margin-bottom: 6px;">Let's Try One Night</p>
+                    <p>If you've got a Tuesday or Wednesday that could use some energy, let's test it. We'll bring the choir, the atmosphere, and help bring the people. You provide the room — and let your kitchen and bar do the rest.</p>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-cta">Ready to talk?</div>
+                    <div class="contact-info">
+                        <strong>Hwan-Yi Choo</strong><br>
+                        Melbourne
+                    </div>
+                    <div class="contact-info">
+                        hwanyi.choo@gmail.com
+                    </div>
+                    <a href="https://calendar.app.google/vBxAv2giB6cDLudNA" class="cta-button">Schedule a Call</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
