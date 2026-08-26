@@ -35,7 +35,7 @@
         .header {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             color: white;
-            padding: 35px 30px;
+            padding: 30px 30px 20px 30px;
             position: relative;
         }
 
@@ -50,95 +50,101 @@
         }
 
         .header-title {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             letter-spacing: -0.5px;
             line-height: 1.1;
         }
 
         .header-subtitle {
-            font-size: 18px;
+            font-size: 16px;
             color: #f39c12;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
 
         .body-content {
-            padding: 28px;
+            padding: 18px 22px;
             flex: 1;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
+            font-size: 11px;
         }
 
-        .tagline {
-            color: #34495e;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 15px;
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 14px;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e3a5f;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .hero-text p {
+            font-size: 10.5px;
+            color: #555;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, #fffbf5 0%, #f0f8f4 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90px;
+            border: 2px solid #f39c12;
+        }
+
+        .experience-callout {
+            background: #fffbf5;
             border-left: 3px solid #f39c12;
-            padding-left: 12px;
-            font-weight: 500;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            font-size: 10.5px;
+            line-height: 1.4;
+            color: #555;
+            border-radius: 3px;
+        }
+
+        .experience-callout strong {
+            color: #1e3a5f;
+            display: block;
+            margin-bottom: 4px;
         }
 
         .section-title {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
             color: #1e3a5f;
             letter-spacing: 0.5px;
-            margin-bottom: 10px;
-            margin-top: 12px;
-        }
-
-        .benefits-list {
-            list-style: none;
-            margin-bottom: 15px;
-            font-size: 12px;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        .benefits-list li {
-            margin-bottom: 6px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .benefits-list li:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #f39c12;
-            font-weight: bold;
-        }
-
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #ddd, transparent);
-            margin: 8px 0;
-        }
-
-        .options-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
             margin-bottom: 8px;
+            margin-top: 10px;
         }
 
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 10px;
-            line-height: 1.3;
-            margin-bottom: 8px;
+            font-size: 9.5px;
+            line-height: 1.2;
+            margin-bottom: 6px;
         }
 
         .comparison-table th {
             background: #f8f9fa;
             border: 1px solid #d5dce0;
-            padding: 8px 6px;
+            padding: 6px 4px;
             text-align: left;
             font-weight: 700;
             color: #1e3a5f;
@@ -146,7 +152,7 @@
 
         .comparison-table td {
             border: 1px solid #d5dce0;
-            padding: 8px 6px;
+            padding: 6px 4px;
             color: #555;
         }
 
@@ -168,89 +174,94 @@
         .check {
             color: #4caf50;
             font-weight: bold;
-            font-size: 11px;
+            font-size: 10px;
         }
 
         .cross {
             color: #999;
-            font-size: 11px;
+            font-size: 10px;
         }
 
         .option-header {
             font-weight: 700;
             color: #f39c12;
-            font-size: 10px;
+            font-size: 9.5px;
         }
 
         .option-price-cell {
             font-weight: 700;
             color: #1e3a5f;
-            font-size: 11px;
+            font-size: 10px;
         }
 
-        .proof-point {
-            background: #f8f9fa;
-            border-left: 3px solid #4caf50;
-            padding: 10px 12px;
-            margin-bottom: 12px;
-            font-size: 11px;
-            line-height: 1.5;
-            color: #555;
-        }
-
-        .proof-point strong {
+        .option-name {
+            font-weight: 700;
             color: #1e3a5f;
+            font-size: 9px;
+        }
+
+        .benefit-cell {
+            font-size: 9px;
+            color: #666;
+            line-height: 1.3;
+            font-weight: 500;
         }
 
         .footer-divider {
             height: 2px;
             background: linear-gradient(90deg, #f39c12, #e67e22);
             margin-top: auto;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 20px;
+            gap: 16px;
+            padding-bottom: 10px;
         }
 
         .footer-section p {
-            font-size: 12px;
+            font-size: 11px;
             color: #2c3e50;
             line-height: 1.5;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .footer-cta {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: #1e3a5f;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .contact-info {
-            font-size: 12px;
+            font-size: 11px;
             color: #555;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .cta-button {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             color: white;
             padding: 4px 10px;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border-radius: 3px;
             display: inline-block;
-            margin-top: 5px;
+            margin-top: 4px;
             text-decoration: none;
         }
 
         .cta-button:hover {
             opacity: 0.9;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
         }
 
         @media print {
@@ -276,19 +287,15 @@
             }
 
             .header-title {
-                font-size: 32px;
+                font-size: 28px;
             }
 
-            .options-grid {
+            .hero-section {
                 grid-template-columns: 1fr;
             }
 
             .footer {
                 grid-template-columns: 1fr;
-            }
-
-            .body-content {
-                padding: 20px;
             }
         }
     </style>
@@ -303,55 +310,69 @@
 
         <!-- Body -->
         <div class="body-content">
-            <!-- Main Tagline -->
-            <div class="tagline">
-                Turn a quiet weeknight into a room full of people singing, laughing, eating and drinking.
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h2>Fix Your Slow Nights. Build Community.</h2>
+                    <p>Tuesday and Wednesday nights empty? We bring 30-50 people ready to sing, spend, and come back monthly. It's not a concert—everyone participates. The result: a warm, joyful atmosphere that fills your venue and drives repeat business.</p>
+                </div>
+                <div class="hero-image">
+                    <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stage -->
+                        <rect x="10" y="60" width="100" height="25" fill="#8b7355" opacity="0.3"/>
+
+                        <!-- Conductor -->
+                        <circle cx="55" cy="35" r="4" fill="#1e3a5f"/>
+                        <line x1="55" y1="39" x2="55" y2="50" stroke="#1e3a5f" stroke-width="1.5"/>
+                        <line x1="55" y1="42" x2="48" y2="48" stroke="#1e3a5f" stroke-width="1"/>
+                        <line x1="55" y1="42" x2="62" y2="48" stroke="#1e3a5f" stroke-width="1"/>
+
+                        <!-- Baton -->
+                        <line x1="55" y1="35" x2="60" y2="30" stroke="#f39c12" stroke-width="1" stroke-linecap="round"/>
+
+                        <!-- Singers around conductor -->
+                        <!-- Left singers -->
+                        <circle cx="28" cy="55" r="3.5" fill="#4caf50" opacity="0.7"/>
+                        <circle cx="35" cy="62" r="3.5" fill="#4caf50" opacity="0.7"/>
+                        <circle cx="32" cy="70" r="3.5" fill="#4caf50" opacity="0.7"/>
+
+                        <!-- Right singers -->
+                        <circle cx="82" cy="55" r="3.5" fill="#4caf50" opacity="0.7"/>
+                        <circle cx="75" cy="62" r="3.5" fill="#4caf50" opacity="0.7"/>
+                        <circle cx="78" cy="70" r="3.5" fill="#4caf50" opacity="0.7"/>
+
+                        <!-- Front singers -->
+                        <circle cx="45" cy="75" r="3.5" fill="#4caf50" opacity="0.7"/>
+                        <circle cx="65" cy="75" r="3.5" fill="#4caf50" opacity="0.7"/>
+
+                        <!-- Venue -->
+                        <rect x="5" y="5" width="110" height="85" fill="none" stroke="#d5dce0" stroke-width="1.5" rx="3"/>
+                    </svg>
+                </div>
             </div>
 
-            <!-- Problem/Opportunity -->
-            <p style="font-size: 12px; color: #555; margin-bottom: 10px; line-height: 1.5;">
-                Pubs need reasons for people to come in on a Tuesday or Wednesday night. People are looking for connection, community and experiences they can share. <strong style="color: #1e3a5f;">We bring both together.</strong>
-            </p>
-
-            <!-- Proof Point -->
-            <div class="proof-point">
-                <strong>Proven track record:</strong> We run a monthly choir night at the Celtic Club in Brunswick. One hour of high-energy, participatory singing that turns a regular weeknight into a genuine community event.
+            <!-- What Makes It Work -->
+            <div class="experience-callout">
+                <strong>Why it works:</strong> Everyone sings. No passive audience. Genuine community connection that keeps people coming back month after month.
             </div>
 
-            <!-- Experience -->
-            <div class="proof-point" style="border-left-color: #f39c12; background: #fffbf5;">
-                It's not a concert where people sit and watch. Everyone sings. The result is a warm, joyful atmosphere that keeps people in the venue — and brings them back next month.
-            </div>
-
-            <!-- What It Brings -->
-            <div class="section-title">What It Brings to Your Venue</div>
-            <ul class="benefits-list">
-                <li><strong>Mid-week foot traffic</strong> — a reliable reason to come out on a quiet night</li>
-                <li><strong>An engaged crowd</strong> — positive, social people who eat, drink and enjoy</li>
-                <li><strong>Repeat visitation</strong> — a monthly event can become part of people's routine</li>
-                <li><strong>Community connection</strong> — an experience that builds goodwill</li>
-                <li><strong>Low-overhead entertainment</strong> — we bring the experience; you provide the venue</li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <!-- Three Options -->
-            <div class="section-title">Three Ways to Work Together</div>
+            <!-- Partnership Options -->
+            <div class="section-title">Three Ways to Partner</div>
             <table class="comparison-table">
                 <thead>
                     <tr>
                         <th style="width: 35%;"></th>
-                        <th class="option-column" style="background: #fffbf5;"><div class="option-header">OPTION A</div><div class="option-price-cell">$1,000/event</div></th>
-                        <th class="option-column" style="background: #f0f8f4;"><div class="option-header">OPTION B</div><div class="option-price-cell">No fee</div></th>
-                        <th class="option-column" style="background: #fffbf5;"><div class="option-header">OPTION C</div><div class="option-price-cell">$500 + promo</div></th>
+                        <th class="option-column" style="background: #fffbf5;"><div class="option-header">OPTION A</div><div class="option-price-cell">$1,000/event</div><div class="option-name">Simple & Guaranteed</div></th>
+                        <th class="option-column" style="background: #f0f8f4;"><div class="option-header">OPTION B</div><div class="option-price-cell">No fee</div><div class="option-name">Shared Risk</div></th>
+                        <th class="option-column" style="background: #fffbf5;"><div class="option-header">OPTION C</div><div class="option-price-cell">$500 + promo</div><div class="option-name">Partnership</div></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="background: #fafbfc; border-bottom: 2px solid #ddd;">
-                        <td class="feature-name"></td>
-                        <td class="option-column" style="font-size: 10px; color: #666; line-height: 1.3; padding: 6px;">Simple, predictable. You handle promotion & ticketing. We deliver the show.</td>
-                        <td class="option-column" style="font-size: 10px; color: #666; line-height: 1.3; padding: 6px;">No upfront cost. Build the event together. Win bigger when you promote well.</td>
-                        <td class="option-column" style="font-size: 10px; color: #666; line-height: 1.3; padding: 6px;">Balanced partnership. Lower fee + shared revenue. Grow sustainably together.</td>
+                    <tr style="background: #fafbfc; border-bottom: 2px solid #ddd; font-weight: 600;">
+                        <td class="feature-name">Venue Benefits</td>
+                        <td class="option-column benefit-cell" style="color: #4caf50;">Guaranteed revenue + all ticket sales</td>
+                        <td class="option-column benefit-cell" style="color: #4caf50;">No upfront cost. Grow together.</td>
+                        <td class="option-column benefit-cell" style="color: #e67e22;">Lower cost + shared upside</td>
                     </tr>
                     <tr>
                         <td class="feature-name">Professional conductor</td>
@@ -391,7 +412,7 @@
                     </tr>
                     <tr style="font-weight: 600;">
                         <td class="feature-name">Ticket revenue</td>
-                        <td class="option-column" style="color: #1e3a5f;">100% ours</td>
+                        <td class="option-column" style="color: #4caf50;">100% yours</td>
                         <td class="option-column" style="color: #1e3a5f;">100% ours</td>
                         <td class="option-column" style="color: #e67e22;">Shared %</td>
                     </tr>
@@ -404,19 +425,16 @@
             <!-- Footer -->
             <div class="footer">
                 <div class="footer-section">
-                    <p style="font-weight: 600; color: #1e3a5f; margin-bottom: 6px;">Let's Try One Night</p>
-                    <p>If you've got a Tuesday or Wednesday that could use some energy, let's test it. We'll bring the choir, the atmosphere, and help bring the people. You provide the room — and let your kitchen and bar do the rest.</p>
+                    <p style="font-weight: 600; color: #1e3a5f; margin-bottom: 4px;">Ready to test it?</p>
+                    <p>Got a Tuesday or Wednesday that needs energy? Let's try one night. We bring the choir, the vibe, and help you bring the crowd. You provide the room.</p>
                 </div>
                 <div class="footer-section">
-                    <div class="footer-cta">Ready to talk?</div>
+                    <div class="footer-cta">Let's talk</div>
                     <div class="contact-info">
-                        <strong>Hwan-Yi Choo</strong><br>
-                        Melbourne
+                        <strong>Chris Blaine</strong><br>
+                        <strong>Hwan-Yi Choo</strong>
                     </div>
-                    <div class="contact-info">
-                        hwanyi.choo@gmail.com
-                    </div>
-                    <a href="https://calendar.app.google/vBxAv2giB6cDLudNA" class="cta-button">Schedule a Call</a>
+                    <a href="https://calendar.app.google/vBxAv2giB6cDLudNA" class="cta-button">Book a Call</a>
                 </div>
             </div>
         </div>
